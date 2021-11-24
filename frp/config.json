@@ -1,0 +1,31 @@
+{
+    "name": "frp网络穿透",
+    "version": "0.0.1",
+    "slug": "hac-addons-frp",
+    "description": "通过服务代理在外部访问HA",
+    "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+    "url": "https://github.com/hihass/hac-addons/tree/main/frp",
+    "startup": "services",
+    "boot": "auto",
+    "image": "homeintelligentcube/{arch}-hacaddons-frp",
+    "options": {
+      "frp_server": "hihass.com",
+      "frp_server_port": 7000,
+      "frp_token": "5da55d512161ea774cb56d72913a3aed",
+      "tunnel_type": "tcp",
+      "tcp_remote_port": 7001,
+      "local_host": "homeassistant",
+      "local_port": 8123
+    },
+    "schema": {
+      "frp_server": "str",
+      "frp_server_port": "port",
+      "frp_token": "str",
+      "tunnel_type": "list(tcp|http)",
+      "tcp_remote_port": "port?",
+      "local_host": "str",
+      "local_port": "port",
+      "http_domain": "str?",
+      "http_subdomain_host": "str?"
+    }
+  }
